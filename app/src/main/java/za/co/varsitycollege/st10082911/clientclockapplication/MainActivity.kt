@@ -2,6 +2,7 @@ package za.co.varsitycollege.st10082911.clientclockapplication
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import android.content.Intent
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -15,32 +16,7 @@ import za.co.varsitycollege.st10082911.clientclockapplication.ui.theme.ClientClo
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ClientClockApplicationTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_main) // This line is not needed
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ClientClockApplicationTheme {
-        Greeting("Android")
     }
 }
