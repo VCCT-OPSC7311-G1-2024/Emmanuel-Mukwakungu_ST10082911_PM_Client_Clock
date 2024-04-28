@@ -16,7 +16,9 @@ import za.co.varsitycollege.st10082911.clientclockapplication.ui.theme.ClientClo
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // This line is not needed
+        setContentView(R.layout.activity_main)
+
+
 
     }
 }
