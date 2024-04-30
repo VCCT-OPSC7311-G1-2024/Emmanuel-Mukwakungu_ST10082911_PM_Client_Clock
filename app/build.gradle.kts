@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "za.co.varsitycollege.st10082911.clientclockapplication"
     compileSdk = 34
+    viewBinding.enable = true
 
     defaultConfig {
         applicationId = "za.co.varsitycollege.st10082911.clientclockapplication"
@@ -59,6 +60,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +71,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.constraintlayout:constraintlayout:2.1.2")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.appcompat:appcompat:1.4.0")
 }

@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">ClientClockApplication</string>
+    <string name="app_name">Client Clock</string>
+    <string name="slogan">Track your time to make every second count.</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="today_project">Today\'s Project</string>
+    <string name="new_project">New Project</string>
+    <string name="welcome_message">Good Day!</string>
+    <string name="welcome_message1">Get started with Client Clock Track app</string>
+    <string name="my_team">My team</string>
+
 </resources>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Category">
+
+    <!-- main linear layout!-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- 2nd linear layout!-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- back button!-->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="100dp"
+                android:layout_height="24dp"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="55dp"
+                android:background="@color/transparent"
+                android:src="@drawable/back_button_sign1" />
+
+            <!-- text view to create new project!-->
+            <TextView
+                android:id="@+id/text_Categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="New Project"
+                android:textColor="@color/black"
+                android:fontFamily="@font/jost_medium"
+                android:textSize="35dp" />
+
+
+        </LinearLayout>
+
+        <!-- scroll view!-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 3rd linear layout!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- text view for category!-->
+                <TextView
+                    android:id="@+id/text_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/jost_medium"
+                    android:text="Category"
+                    android:textSize="16dp" />
+
+                <!-- edit text to create category with user's input!-->
+                <EditText
+                    android:id="@+id/edittext_category"
+                    android:layout_width="307dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/blue_border"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15sp" />
+
+                <!-- text view for task!-->
+                <TextView
+                    android:id="@+id/text_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/jost_medium"
+                    android:text="Task"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <!-- edit text to create task with user's input!-->
+                <EditText
+                    android:id="@+id/edit_task"
+                    android:layout_width="307dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/blue_border"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:paddingStart="20dp"/>
+
+                <!-- text view for description!-->
+                <TextView
+                    android:id="@+id/text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/jost_medium"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <!-- edit text to create description with user's input!-->
+                <EditText
+                    android:id="@+id/edit_description"
+                    android:layout_width="307dp"
+                    android:layout_height="204dp"
+                    android:background="@drawable/blue_border"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:paddingStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/text_startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/jost_medium"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <!-- edit text to enter date with user's input!-->
+                <EditText
+                    android:id="@+id/edit_Date"
+                    android:layout_width="307dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/blue_border"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:paddingStart="20dp"/>
+
+                <!-- 4th linear layout!-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_startTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginHorizontal="85dp"
+                        android:fontFamily="@font/jost_medium"
+                        android:text="Start Time"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/text_endTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="30dp"
+                        android:fontFamily="@font/jost_medium"
+                        android:text="End Time"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+
+                </LinearLayout>
+
+                <!-- 5th linear layout!-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/edit_startTime"
+                        android:layout_width="126dp"
+                        android:layout_height="54dp"
+                        android:background="@drawable/blue_border"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginHorizontal="60dp"
+                        android:textSize="15sp"
+                        android:paddingStart="20dp"/>
+
+                    <EditText
+                        android:id="@+id/edit_endTime"
+                        android:layout_width="126dp"
+                        android:layout_height="54dp"
+                        android:background="@drawable/blue_border"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="-5dp"
+                        android:textSize="15sp"
+                        android:paddingStart="20dp"/>
+
+                </LinearLayout>
+
+                <!-- 6th linear layout!-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- button to upload photo!-->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_uploadPhoto"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Upload Photo"
+                        android:layout_marginHorizontal="60dp"
+                        android:fontFamily="@font/jost_medium"
+                        android:background="@drawable/button_cornered"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp"
+                        android:padding="15dp"
+                        />
+
+                    <!-- button to save the project!-->
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Save"
+                        android:layout_marginLeft="-2dp"
+                        android:fontFamily="@font/jost_medium"
+                        android:background="@drawable/button_cornered"
+                        android:textColor="@color/blue_light"
+                        android:textSize="18sp"
+                        android:padding="15dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
