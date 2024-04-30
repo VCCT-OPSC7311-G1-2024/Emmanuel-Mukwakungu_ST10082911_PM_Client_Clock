@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "za.co.varsitycollege.st10082911.clientclockapplication"
-        minSdk = 27
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
