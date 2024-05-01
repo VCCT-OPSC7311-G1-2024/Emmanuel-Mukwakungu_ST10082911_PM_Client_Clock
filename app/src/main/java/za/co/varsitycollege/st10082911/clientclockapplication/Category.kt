@@ -26,6 +26,8 @@ class Category : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
+        binding = ActivityCategoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Set up the date picker and time pickers
         setDate()
