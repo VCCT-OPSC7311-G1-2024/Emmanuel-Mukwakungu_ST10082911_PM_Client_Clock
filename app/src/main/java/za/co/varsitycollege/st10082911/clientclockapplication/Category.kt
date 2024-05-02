@@ -10,6 +10,11 @@ import java.util.Calendar
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.widget.Toast
+import android.app.Activity
+import android.content.Intent
+import android.graphics.BitmapFactory
+import android.provider.MediaStore
+import java.io.IOException
 
 // Category class that extends AppCompatActivity
 class Category : AppCompatActivity() {
@@ -29,6 +34,13 @@ class Category : AppCompatActivity() {
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set click listener for the upload photo button
+        binding.btnUploadPhoto.setOnClickListener {
+            // Open the device's image gallery using an Intent
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+        }
+
         // Set up the date picker and time pickers
         setDate()
         setStartTime()
@@ -38,6 +50,32 @@ class Category : AppCompatActivity() {
         binding.btnSave.setOnClickListener {
             saveTimesheetEntry()
         }
+    }
+
+    //Handle the result of the image selection
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
+            // Retrieve the selected image URI
+            val selectedImageUri = data.data
+            try {
+                // Decode the selected image URI into a Bitmap
+                val inputStream = contentResolver.openInputStream(selectedImageUri!!)
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                // Display the selected image (optional)
+                // imageView.setImageBitmap(bitmap)
+                // Do something with the selected image, such as uploading it to a server
+                // For demonstration purposes, we'll just display a Toast message
+                Toast.makeText(this, "Photo selected successfully", Toast.LENGTH_SHORT).show()
+            } catch (e: IOException) {
+                e.printStackTrace()
+                Toast.makeText(this, "Failed to load image", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    companion object {
+        private const val PICK_IMAGE_REQUEST = 1
     }
 
     // Function to save timesheet entry
@@ -128,5 +166,7 @@ class Category : AppCompatActivity() {
             timePickerDialog.show()
         }
     }
+
+
 }
 //=====================================================end of file - Keemo was here=======================================================
