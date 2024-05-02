@@ -137,14 +137,23 @@
                     android:textSize="16dp" />
 
                 <!-- edit text to enter date with user's input!-->
-                <EditText
-                    android:id="@+id/edit_startDate"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_Date"
                     android:layout_width="307dp"
                     android:layout_height="54dp"
                     android:background="@drawable/blue_border"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="15sp"
-                    android:paddingStart="20dp"/>
+                    android:drawableLeft="@drawable/calendar_logo"
+                    android:text="May, 3rd"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/jost_medium"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textSize="25sp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                </androidx.appcompat.widget.AppCompatButton>
 
                 <!-- 4th linear layout!-->
                 <LinearLayout
@@ -187,27 +196,43 @@
                     android:orientation="horizontal">
 
 
-                    <EditText
-                        android:id="@+id/edit_startTime"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_startTime"
                         android:layout_width="126dp"
                         android:layout_height="54dp"
                         android:background="@drawable/blue_border"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
                         android:layout_marginHorizontal="60dp"
-                        android:textSize="15sp"
-                        android:paddingStart="20dp"/>
+                        android:text="08:00 AM"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/jost_medium"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textSize="10sp"
+                        android:drawableLeft="@drawable/baseline_access_time_24"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp">
 
-                    <EditText
-                        android:id="@+id/edit_endTime"
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_endTime"
                         android:layout_width="126dp"
                         android:layout_height="54dp"
                         android:background="@drawable/blue_border"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
                         android:layout_marginLeft="-5dp"
-                        android:textSize="15sp"
-                        android:paddingStart="20dp"/>
+                        android:text="12:00 PM"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/jost_medium"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textSize="10sp"
+                        android:drawableLeft="@drawable/baseline_access_time_24"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"/>
 
                 </LinearLayout>
 
@@ -219,6 +244,7 @@
 
                     <!-- button to upload photo!-->
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_uploadPhoto"
                         android:layout_width="140dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
@@ -235,6 +261,7 @@
                     <!-- button to save the project!-->
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_save"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
