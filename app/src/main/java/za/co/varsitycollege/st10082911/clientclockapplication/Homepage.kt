@@ -1,8 +1,11 @@
 package za.co.varsitycollege.st10082911.clientclockapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -11,10 +14,13 @@ class Homepage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_homepage)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val categoryButton: CardView = findViewById(R.id.categoryCard)
+        categoryButton.setOnClickListener {
+            val intent = Intent(this, Category::class.java)
+            startActivity(intent)
+            finish()
         }
+
     }
 }
