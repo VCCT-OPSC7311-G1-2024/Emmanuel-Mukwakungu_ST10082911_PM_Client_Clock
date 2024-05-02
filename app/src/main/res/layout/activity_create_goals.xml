@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateGoals">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- linear layout!-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- back button!-->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="123dp"
+                android:layout_height="24dp"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="55dp"
+                android:background="@color/transparent"
+                android:src="@drawable/back_button_sign1" />
+
+            <!-- text view to create new project!-->
+            <TextView
+                android:id="@+id/txt_Setgoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/set_goals_label"
+                android:textColor="@color/black"
+                android:fontFamily="@font/jost_medium"
+                android:textSize="35sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- text view for goal name!-->
+            <TextView
+                android:id="@+id/txt_goalName"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/jost_medium"
+                android:text="@string/goal_name_label"
+                android:textSize="16sp" />
+
+            <!-- edit text to create goal name with user's input!-->
+            <EditText
+                android:id="@+id/edittext_goal"
+                android:layout_width="307dp"
+                android:layout_height="55dp"
+                android:background="@drawable/blue_border"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp" />
+
+            <!-- text view for goal name!-->
+            <TextView
+                android:id="@+id/txt_maxGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/jost_medium"
+                android:text="@string/maximum_goal_label"
+                android:textSize="16sp" />
+
+            <!-- edit text to create goal name with user's input!-->
+            <EditText
+                android:id="@+id/edittext_maxgoal"
+                android:layout_width="307dp"
+                android:layout_height="55dp"
+                android:background="@drawable/blue_border"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp" />
+
+            <!-- text view for goal name!-->
+            <TextView
+                android:id="@+id/txt_minGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/jost_medium"
+                android:text="@string/minimum_goal_label"
+                android:textSize="16sp" />
+
+            <!-- edit text to create goal name with user's input!-->
+            <EditText
+                android:id="@+id/edittext_mingoal"
+                android:layout_width="307dp"
+                android:layout_height="55dp"
+                android:background="@drawable/blue_border"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"/>
+
+        <!-- button to save the project!-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="158dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/save_label"
+            android:fontFamily="@font/jost_medium"
+            android:background="@drawable/button_cornered"
+            android:textColor="@color/blue_light"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="15dp"
+            android:onClick="onClick"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
