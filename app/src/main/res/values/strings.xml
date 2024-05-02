@@ -8,12 +8,38 @@
     <string name="welcome_message">Good Day!</string>
     <string name="welcome_message1">Get started with Client Clock Track app</string>
     <string name="my_team">My team</string>
-    <string name="set_goals_label">Set Goals</string>
-    <string name="goal_name_label">Goal Name</string>
-    <string name="minimum_goal_label">Minimum Goal</string>
-    <string name="maximum_goal_label">Maximum Goal</string>
-    <string name="save_label">Save</string>
-    <string name="add_goals_label">Add Goals</string>
-    <string name="add_new_goal_label">Add New Goal</string>
+    <string name="your_activity">Your Activity</string>
+    <string name="see_all">See all</string>
+    <string name="button">button</string>
+    <string name="manage_timesheet">Manage Timesheet</string>
+    <string name="every_second_counts_with_our_precision">Every second counts, with our precision.</string>
+    <string name="set_goals">Set Goals</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share</string>
+    <string name="client_clock_label">Client Clock</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">About</string>
+    <string name="camera">Camera</string>
+    <string name="category_list">Category List</string>
+    <string name="calendar">Calendar</string>
+    <string name="home">Home</string>
+    <string name="client_clock_tracker">Client Clock Tracker</string>
+    <string name="profile">Profile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="tracker_label">Tracker</string>
+    <string name="login_label">Login</string>
+    <string name="logout_label">Logout</string>
+    <string name="user_account_label">User Account</string>
+    <string name="category_label">Category</string>
+
+
+    <string-array name="categoty_array">
+        <item>Category 1</item>
+        <item>Category 2</item>
+        <item>Category 3</item>
+    </string-array>
+
+
 
 </resources>

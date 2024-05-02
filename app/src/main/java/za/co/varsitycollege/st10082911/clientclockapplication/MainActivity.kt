@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         binding.btnLogin.setOnClickListener {
             if (binding.edittextEmail.text.toString() == "user" && binding.edittextPassword.text.toString() == "1234"){
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, Category::class.java)
+                val intent = Intent(this, Homepage::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
