@@ -23,9 +23,9 @@ class AddGoals : AppCompatActivity(), View.OnClickListener {
         txtViewMinGoal = findViewById<TextView>(R.id.txtMinGoal)
         txtViewMaxGoal = findViewById<TextView>(R.id.txtMaxGoal)
 
-        val setGoalsButton: Button = findViewById(R.id.buttonAddGoal)
-        setGoalsButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        val addGoalsButton: Button = findViewById(R.id.buttonAddGoal)
+        addGoalsButton.setOnClickListener {
+            val intent = Intent(this, CreateGoals::class.java)
             startActivity(intent)
             finish()
         }
@@ -49,7 +49,7 @@ class AddGoals : AppCompatActivity(), View.OnClickListener {
                 txtViewMinGoal.setText(st2)
                 txtViewMaxGoal.setText(st3)
 
-                val goalEntry = CreateGoals()
+                val goalEntry = CreateGoals(st1,st2,st3)
 
                 goalEntries.clear()
                 goalEntries.add(goalEntry)

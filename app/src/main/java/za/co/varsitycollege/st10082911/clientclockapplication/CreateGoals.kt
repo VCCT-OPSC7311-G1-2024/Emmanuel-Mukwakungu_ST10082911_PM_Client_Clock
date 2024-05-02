@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class CreateGoals : AppCompatActivity(), View.OnClickListener {
+class CreateGoals(st1: String?, st2: String?, st3: String?) : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var txtViewGoal: TextView
     private lateinit var txtViewMin: TextView
@@ -23,13 +23,14 @@ class CreateGoals : AppCompatActivity(), View.OnClickListener {
         txtViewMin = findViewById(R.id.txt_goalName) as TextView
         txtViewMax = findViewById(R.id.txt_goalName) as TextView
 
-        val intent = Intent(this, AddGoals :: class.java)
+
         val backButton: ImageButton = findViewById(R.id.btn_back)
         backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AddGoals::class.java)
             startActivity(intent)
             finish()
         }
+
 
     }
     override fun onClick(v: View?) {
