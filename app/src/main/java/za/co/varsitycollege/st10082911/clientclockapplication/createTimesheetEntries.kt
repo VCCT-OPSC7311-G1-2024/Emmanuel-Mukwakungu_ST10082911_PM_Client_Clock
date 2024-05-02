@@ -1,5 +1,6 @@
 package za.co.varsitycollege.st10082911.clientclockapplication
 
+import android.net.Uri
 
 
 data class createTimesheetEntries (
@@ -8,6 +9,7 @@ data class createTimesheetEntries (
     val description: String = "",
     val startDate: String = "",
     val startTime: String = "",
-    val endTime: String = ""
+    val endTime: String = "",
+    val photoUri: Uri? = null
 )
 
