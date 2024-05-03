@@ -22,5 +22,20 @@ class Homepage : AppCompatActivity() {
             finish()
         }
 
+        val goalButton: CardView = findViewById(R.id.goaslsCard)
+        goalButton.setOnClickListener {
+            val intent = Intent(this, AddGoals::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val createSheetButton: CardView = findViewById(R.id.manageSheetCard)
+        createSheetButton.setOnClickListener {
+            val intent = Intent(this, createTimesheetEntries::class.java)
+            startActivity(intent)
+            finish()
+
+        }
+
     }
 }

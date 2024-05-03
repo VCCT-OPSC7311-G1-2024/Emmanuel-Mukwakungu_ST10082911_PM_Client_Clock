@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -13,6 +14,7 @@ class AddGoals : AppCompatActivity(), View.OnClickListener {
     private lateinit var txtViewGoalName: TextView
     private lateinit var txtViewMinGoal: TextView
     private lateinit var txtViewMaxGoal: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,14 @@ class AddGoals : AppCompatActivity(), View.OnClickListener {
         val addGoalsButton: Button = findViewById(R.id.buttonAddGoal)
         addGoalsButton.setOnClickListener {
             val intent = Intent(this, CreateGoals::class.java)
+            startActivity(intent)
+            finish()
+
+        }
+
+        val backButton: ImageButton = findViewById(R.id.btn_back)
+        backButton.setOnClickListener {
+            val intent = Intent(this, Homepage::class.java)
             startActivity(intent)
             finish()
         }
@@ -49,7 +59,7 @@ class AddGoals : AppCompatActivity(), View.OnClickListener {
                 txtViewMinGoal.setText(st2)
                 txtViewMaxGoal.setText(st3)
 
-                val goalEntry = CreateGoals(st1,st2,st3)
+                val goalEntry = CreateGoals()
 
                 goalEntries.clear()
                 goalEntries.add(goalEntry)
