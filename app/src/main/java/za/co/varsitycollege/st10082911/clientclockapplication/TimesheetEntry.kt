@@ -2,8 +2,7 @@ package za.co.varsitycollege.st10082911.clientclockapplication
 
 import android.net.Uri
 
-
-data class createTimesheetEntries (
+data class TimesheetEntry(
     val category: String = "",
     val task: String = "",
     val description: String = "",
@@ -12,4 +11,5 @@ data class createTimesheetEntries (
     val endTime: String = "",
     val photoUri: Uri? = null
 )
+
 
