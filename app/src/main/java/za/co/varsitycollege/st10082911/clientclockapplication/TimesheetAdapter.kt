@@ -1,5 +1,6 @@
 package za.co.varsitycollege.st10082911.clientclockapplication
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class TimesheetAdapter(private var entries: List<TimesheetEntry>) : RecyclerView
         holder.startTimeTextView.text = entry.startTime
         holder.endTimeTextView.text = entry.endTime
     }
+    @SuppressLint("NotifyDataSetChanged")
     fun updateEntries(newEntries: List<TimesheetEntry>) {
         entries = newEntries
         notifyDataSetChanged()
