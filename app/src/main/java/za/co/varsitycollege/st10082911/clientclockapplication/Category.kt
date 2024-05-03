@@ -34,6 +34,13 @@ class Category : AppCompatActivity() {
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //set onCLickListener for the back button
+        binding.btnBack.setOnClickListener {
+            val intent = Intent(this, Homepage::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         // Set click listener for the upload photo button
         binding.btnUploadPhoto.setOnClickListener {
             // Open the device's image gallery using an Intent
@@ -169,4 +176,4 @@ class Category : AppCompatActivity() {
 
 
 }
-//=====================================================end of file - Keemo was here=======================================================
+//=====================================================end of file=======================================================

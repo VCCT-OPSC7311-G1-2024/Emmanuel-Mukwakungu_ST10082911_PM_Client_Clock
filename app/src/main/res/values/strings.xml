@@ -34,6 +34,15 @@
     <string name="category_label">Category</string>
 
 
+    <string name="add_goals_label">Your Add Goals Label</string>
+    <string name="goal_name_label">Your Goal Name Label</string>
+    <string name="minimum_goal_label">Your Minimum Goal Label</string>
+    <string name="maximum_goal_label">Your Maximum Goal Label</string>
+    <string name="add_new_goal_label">Your Add New Goal Label</string>
+    <string name="set_goals_label">Your Set Goals Label</string>
+    <string name="save_label">Your Save Label</string>
+
+
     <string-array name="categoty_array">
         <item>Category 1</item>
         <item>Category 2</item>
