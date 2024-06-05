@@ -41,6 +41,9 @@
     <string name="add_new_goal_label">Your Add New Goal Label</string>
     <string name="set_goals_label">Your Set Goals Label</string>
     <string name="save_label">Your Save Label</string>
+    <string name="graph">Graph</string>
+    <string name="select_date_range">Select Date Range:</string>
+    <string name="select">Select</string>
 
 
     <string-array name="categoty_array">

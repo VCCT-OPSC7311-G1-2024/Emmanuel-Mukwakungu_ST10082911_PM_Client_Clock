@@ -16,9 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
     }
 }
 
 rootProject.name = "ClientClockApplication"
 include(":app")
- 
