@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- back button!-->
         <ImageButton
             android:id="@+id/btn_back"
             android:layout_width="150dp"
@@ -23,7 +22,6 @@
             android:background="@color/transparent"
             android:src="@drawable/back_button_sign1" />
 
-        <!-- text view to create new project!-->
         <TextView
             android:id="@+id/txt_Graph"
             android:layout_width="wrap_content"
@@ -35,7 +33,6 @@
             android:textColor="@color/black"
             android:fontFamily="@font/jost_medium"
             android:textSize="35sp" />
-
 
     </LinearLayout>
 
@@ -79,7 +76,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:onClick="showStartDatePickerDialog"
             android:text="Select" />
 
     </LinearLayout>
@@ -111,10 +107,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:onClick="showEndDatePickerDialog"
             android:text="@string/select" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_update_chart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Chart" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -126,6 +127,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-
 
 </LinearLayout>
