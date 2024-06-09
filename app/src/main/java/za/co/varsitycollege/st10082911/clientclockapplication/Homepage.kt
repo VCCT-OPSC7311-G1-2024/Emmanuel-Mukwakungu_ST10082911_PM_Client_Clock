@@ -29,6 +29,13 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val dailWorkFeatureButton: CardView = findViewById(R.id.dailyWorkGoalCard)
+        dailWorkFeatureButton.setOnClickListener {
+            val intent = Intent(this, DailWorkFeature::class.java)
+            startActivity(intent)
+        }
+
+
         // Add the logout functionality with a confirmation dialog
         val logoutButton: CardView = findViewById(R.id.LogoutCard)
         logoutButton.setOnClickListener {

@@ -244,6 +244,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/dailyWorkGoalCard"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- back button!-->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="79dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="55dp"
+            android:background="@color/transparent"
+            android:src="@drawable/back_button_sign1" />
+
+        <!-- text view to create new project!-->
+        <TextView
+            android:id="@+id/text_Categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:text="Set Daily Work Goals"
+            android:textColor="@color/black"
+            android:fontFamily="@font/jost_medium"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextMinGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Minimum Daily Goal (Hours)"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/editTextMaxGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Maximum Daily Goal (Hours)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/buttonSaveGoals"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/jost_medium"
+        android:background="@drawable/button_cornered"
+        android:textColor="@color/blue_light"
+        android:text="Save Goals"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/textViewSelectedHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Selected Hours: "
+        android:textSize="16sp"
+        android:visibility="gone"/>
+</LinearLayout>
