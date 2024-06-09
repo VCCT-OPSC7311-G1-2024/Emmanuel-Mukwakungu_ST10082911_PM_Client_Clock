@@ -7,13 +7,12 @@ class TimeSheetManager(private val entries: List<TimesheetEntry>) {
 
     fun getTasksByDateRange(startDate: String, endDate: String): List<TimesheetEntry> {
         val sdf = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
-        val start = sdf.parse(startDate) ?: return emptyList()
-        val end = sdf.parse(endDate) ?: return emptyList()
-
+        val start = sdf.parse(startDate)
+        val end = sdf.parse(endDate)
+        println("Parsed Start Date: $start, End Date: $end")
         return entries.filter {
             val taskDate = sdf.parse(it.startDate)
-            taskDate != null && !taskDate.before(start) && !taskDate.after(end)
+            taskDate != null && taskDate in start..end
         }
     }
 }
-

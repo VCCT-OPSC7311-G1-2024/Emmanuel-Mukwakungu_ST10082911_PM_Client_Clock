@@ -18,6 +18,9 @@
             android:name=".DailWorkFeature"
             android:exported="false" />
         <activity
+            android:name=".CreateGraph"
+            android:exported="false" />
+        <activity
             android:name=".DisplayTimesheet"
             android:exported="false" />
         <activity

@@ -29,6 +29,7 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val dailWorkFeatureButton: CardView = findViewById(R.id.dailyWorkGoalCard)
         dailWorkFeatureButton.setOnClickListener {
             val intent = Intent(this, DailWorkFeature::class.java)
@@ -41,6 +42,13 @@ class Homepage : AppCompatActivity() {
         logoutButton.setOnClickListener {
             showLogoutConfirmationDialog()
         }
+
+        val graphButton: CardView = findViewById(R.id.reportCard)
+       graphButton.setOnClickListener {
+            val intent = Intent(this, CreateGraph::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun showLogoutConfirmationDialog() {
