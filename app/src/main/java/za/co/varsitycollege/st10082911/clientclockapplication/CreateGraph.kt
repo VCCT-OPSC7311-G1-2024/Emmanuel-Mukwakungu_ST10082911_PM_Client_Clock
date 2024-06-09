@@ -9,13 +9,18 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
+import kotlin.random.Random
+
 class CreateGraph : AppCompatActivity() {
 
     private lateinit var lineChart: LineChart
@@ -35,6 +40,7 @@ class CreateGraph : AppCompatActivity() {
         endDateEditText = findViewById(R.id.endDateEditText)
         startDateButton = findViewById(R.id.startDateButton)
         endDateButton = findViewById(R.id.endDateButton)
+        updateButton = findViewById(R.id.btn_update_chart)
 
         setupChart()
 
@@ -46,7 +52,6 @@ class CreateGraph : AppCompatActivity() {
             showDatePickerDialog(endDateEditText)
         }
 
-        updateButton = findViewById(R.id.btn_update_chart)
         updateButton.setOnClickListener {
             updateChart()
         }
@@ -74,63 +79,116 @@ class CreateGraph : AppCompatActivity() {
     }
 
     private fun setupChart() {
-        // Sample data
-        val entries = listOf(
-            Entry(1f, 8f),  // Day 1, 8 hours
-            Entry(2f, 7f),
-            Entry(3f, 6f),
-            Entry(4f, 9f),
-            Entry(5f, 5f)
-        )
+        // Use sample data from 1 to 24 hours
+        val workHoursData = generateRandomWorkHours(24)
+
+        val entries = workHoursData.map { Entry(it.day.toFloat(), it.hours) }
 
         val dataSet = LineDataSet(entries, "Hours Worked")
         val lineData = LineData(dataSet)
         lineChart.data = lineData
 
-        // Adding minimum and maximum goal lines
+        val minHours = workHoursData.minByOrNull { it.hours }?.hours ?: 0f
+        val maxHours = workHoursData.maxByOrNull { it.hours }?.hours ?: 0f
+
         val leftAxis: YAxis = lineChart.axisLeft
         val rightAxis: YAxis = lineChart.axisRight
         leftAxis.removeAllLimitLines()
         rightAxis.removeAllLimitLines()
 
-        val minGoal = LimitLine(6f, "Min Goal").apply {
+        val minGoal = LimitLine(minHours, "Min Goal").apply {
             lineWidth = 2f
             lineColor = Color.parseColor("#FF018786") // Example color
         }
         leftAxis.addLimitLine(minGoal)
 
-        val maxGoal = LimitLine(9f, "Max Goal").apply {
+        val maxGoal = LimitLine(maxHours, "Max Goal").apply {
             lineWidth = 2f
             lineColor = Color.parseColor("#FF6200EE") // Example color
         }
         leftAxis.addLimitLine(maxGoal)
 
-        // Refresh the chart
+        // Customizing X-Axis for day labels
+        val xAxis = lineChart.xAxis
+        xAxis.valueFormatter = DayAxisValueFormatter()
+        xAxis.granularity = 1f // Minimum interval for the X axis values
+
+        // Customizing Y-Axis for hour labels
+        leftAxis.valueFormatter = HourAxisValueFormatter()
+        leftAxis.granularity = 1f // Minimum interval for the Y axis values
+
         lineChart.invalidate()
     }
 
     private fun updateChart() {
-        // Get dates from DatePickers
         val startDate = startDateEditText.text.toString()
         val endDate = endDateEditText.text.toString()
 
-        // Filter or generate new data based on selected dates
-        // This is where you would update your data set
+        val workHoursData = fetchWorkHours(startDate, endDate)
 
-        // For demonstration, let's just regenerate the same data
-        val entries = listOf(
-            Entry(1f, 8f),  // Day 1, 8 hours
-            Entry(2f, 7f),
-            Entry(3f, 6f),
-            Entry(4f, 9f),
-            Entry(5f, 5f)
-        )
+        val minHours = workHoursData.minByOrNull { it.hours }?.hours ?: 0f
+        val maxHours = workHoursData.maxByOrNull { it.hours }?.hours ?: 0f
+
+        val entries = workHoursData.map { Entry(it.day.toFloat(), it.hours) }
 
         val dataSet = LineDataSet(entries, "Hours Worked")
         val lineData = LineData(dataSet)
         lineChart.data = lineData
 
-        // Refresh the chart
+        val leftAxis: YAxis = lineChart.axisLeft
+        val rightAxis: YAxis = lineChart.axisRight
+        leftAxis.removeAllLimitLines()
+        rightAxis.removeAllLimitLines()
+
+        val minGoal = LimitLine(minHours, "Min Goal").apply {
+            lineWidth = 2f
+            lineColor = Color.parseColor("#FF018786") // Example color
+        }
+        leftAxis.addLimitLine(minGoal)
+
+        val maxGoal = LimitLine(maxHours, "Max Goal").apply {
+            lineWidth = 2f
+            lineColor = Color.parseColor("#FF6200EE") // Example color
+        }
+        leftAxis.addLimitLine(maxGoal)
+
+        // Customizing X-Axis for day labels
+        val xAxis = lineChart.xAxis
+        xAxis.valueFormatter = DayAxisValueFormatter()
+        xAxis.granularity = 1f // Minimum interval for the X axis values
+
+        // Customizing Y-Axis for hour labels
+        leftAxis.valueFormatter = HourAxisValueFormatter()
+        leftAxis.granularity = 1f // Minimum interval for the Y axis values
+
         lineChart.invalidate()
+    }
+
+    // Function to generate random work hours
+    private fun generateRandomWorkHours(days: Int): List<WorkHour> {
+        return List(days) { WorkHour(it + 1, Random.nextFloat() * 23 + 1) }
+    }
+
+    // Dummy function to fetch work hours based on date range
+    private fun fetchWorkHours(startDate: String, endDate: String): List<WorkHour> {
+        // Replace this with actual data fetching logic
+        return generateRandomWorkHours(24)
+    }
+
+    // Data class to represent work hours
+    data class WorkHour(val day: Int, val hours: Float)
+
+    // Custom formatter for day labels on X-Axis
+    class DayAxisValueFormatter : ValueFormatter() {
+        override fun getAxisLabel(value: Float, axis: AxisBase?): String {
+            return "Day ${value.toInt()}"
+        }
+    }
+
+    // Custom formatter for hour labels on Y-Axis
+    class HourAxisValueFormatter : ValueFormatter() {
+        override fun getAxisLabel(value: Float, axis: AxisBase?): String {
+            return "${value.toInt()}h"
+        }
     }
 }
