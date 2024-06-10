@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="false"
-    android:background="@color/blue"
+    android:background="@color/white"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
@@ -20,7 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue">
+            android:background="@color/white">
 
             <!--<androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -43,10 +43,12 @@
                 android:fontFamily="@font/sigmar_one"
                 android:text="@string/client_clock_label"
                 android:textSize="24sp"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 app:layout_constraintHorizontal_bias="0.145"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/subtxt"
@@ -56,22 +58,13 @@
                 android:fontFamily="@font/roboto_light"
                 android:text="@string/every_second_counts_with_our_precision"
                 android:textSize="12sp"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/clientClocktxt" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/subtxt"
-                app:srcCompat="@drawable/clientclocklogobg" >
 
-            </ImageView>
                 <!--app:layout_constraintTop_toBottomOf="@+id/toolbar"!-->
+
 
 
             <LinearLayout
@@ -82,9 +75,10 @@
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
+                app:layout_constraintTop_toBottomOf="@+id/subtxt">
 
-                <androidx.cardview.widget.CardView
+
+            <androidx.cardview.widget.CardView
                     android:id="@+id/trackerCard"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

@@ -35,15 +35,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="20dp"
-                android:text="@string/add_goals_label"
+                android:text="Your Add Goals Label"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:fontFamily="@font/jost_medium"
-                android:textSize="35sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="20dp"
             android:orientation="vertical">
         </LinearLayout>
 
@@ -94,7 +95,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="20dp"
             android:orientation="vertical">
         </LinearLayout>
 
