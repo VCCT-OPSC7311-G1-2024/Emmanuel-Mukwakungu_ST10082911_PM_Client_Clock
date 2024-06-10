@@ -14,7 +14,7 @@
         <!-- back button!-->
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="79dp"
+            android:layout_width="80dp"
             android:layout_height="24dp"
             android:layout_gravity="top|center"
             android:layout_marginTop="55dp"
@@ -29,10 +29,11 @@
             android:layout_gravity="center_vertical"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
-            android:text="Set Daily Work Goals"
+            android:text="SET DAILY WORK GOALS"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:fontFamily="@font/jost_medium"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 

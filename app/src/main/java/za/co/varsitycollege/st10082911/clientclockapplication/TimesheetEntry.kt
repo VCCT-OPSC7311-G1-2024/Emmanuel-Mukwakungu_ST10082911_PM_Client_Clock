@@ -9,5 +9,3 @@ data class TimesheetEntry(
     val endTime: String = "",
     val photoUri: String? = null
 )
-
-
