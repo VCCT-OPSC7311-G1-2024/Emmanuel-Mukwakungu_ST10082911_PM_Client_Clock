@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "863723796154",
+    "project_id": "clientclockapplication",
+    "storage_bucket": "clientclockapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863723796154:android:f6cdf27d0d112255557483",
+        "android_client_info": {
+          "package_name": "za.co.varsitycollege.st10082911.clientclockapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmF_Dn03FkKr-HktREtz0d2prG18KP37I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

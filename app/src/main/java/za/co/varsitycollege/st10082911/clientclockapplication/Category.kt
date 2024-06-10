@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import za.co.varsitycollege.st10082911.clientclockapplication.databinding.ActivityCategoryBinding
 import java.util.Calendar
 import android.app.DatePickerDialog
@@ -13,19 +14,19 @@ import android.provider.MediaStore
 import java.io.IOException
 
 class Category : AppCompatActivity() {
-    // Define all static elements in a single companion object
     companion object {
-        val timesheetEntries = mutableListOf<TimesheetEntry>()
-        val categories = mutableListOf<CategoryClass>()
-        private const val PICK_IMAGE_REQUEST = 1 // Correctly place the constant here
+        private const val PICK_IMAGE_REQUEST = 1
     }
 
     private lateinit var binding: ActivityCategoryBinding
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
 
         binding.btnBack.setOnClickListener { finish() }
         binding.btnUploadPhoto.setOnClickListener {
@@ -63,9 +64,35 @@ class Category : AppCompatActivity() {
 
         if (category in listOf("Work", "Side-project", "School")) {
             val newEntry = TimesheetEntry(category, task, description, date, startTime, endTime)
-            val categoryInstance = categories.find { it.name == category } ?: CategoryClass(category).also { categories.add(it) }
-            categoryInstance.timesheetEntries.add(newEntry)
-            Toast.makeText(this, "Timesheet entry saved successfully", Toast.LENGTH_SHORT).show()
+            val categoryDocRef = db.collection("categories").document(category)
+
+            categoryDocRef.get().addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val existingCategory = document.toObject(CategoryClass::class.java)
+                    existingCategory?.let {
+                        val updatedEntries = it.timesheetEntries.toMutableList()
+                        updatedEntries.add(newEntry)
+                        categoryDocRef.set(CategoryClass(category, updatedEntries))
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Timesheet entry saved successfully", Toast.LENGTH_SHORT).show()
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this, "Error saving entry: $e", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                } else {
+                    val newCategory = CategoryClass(category, listOf(newEntry))
+                    categoryDocRef.set(newCategory)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Timesheet entry saved successfully", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(this, "Error saving entry: $e", Toast.LENGTH_SHORT).show()
+                        }
+                }
+            }.addOnFailureListener { e ->
+                Toast.makeText(this, "Error fetching category: $e", Toast.LENGTH_SHORT).show()
+            }
         } else {
             Toast.makeText(this, "Invalid category. Only enter these 3 options: Work, School, Side-project", Toast.LENGTH_LONG).show()
         }

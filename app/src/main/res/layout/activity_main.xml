@@ -22,14 +22,6 @@
             android:orientation="vertical"
             >
 
-            <!-- This ImageView will display the logo of the app -->
-            <ImageView
-                android:id="@+id/clientclocklogo"
-                android:layout_width="120dp"
-                android:layout_height="108dp"
-                android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/clientclocklogobg"
-                android:layout_marginTop="6dp"/>
 
             <!-- This CardView will contain the main content of the activity -->
             <androidx.cardview.widget.CardView
