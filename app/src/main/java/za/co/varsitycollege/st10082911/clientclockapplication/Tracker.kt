@@ -49,6 +49,7 @@ class Tracker : AppCompatActivity() {
             pauseOffset = SystemClock.elapsedRealtime() - chronometer.base
             running = false
         }
+
     }
 }
 
