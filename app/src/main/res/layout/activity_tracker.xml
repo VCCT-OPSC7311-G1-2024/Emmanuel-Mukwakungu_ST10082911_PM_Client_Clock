@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
     tools:context=".Tracker">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="551dp"
+        android:orientation="vertical">
+        <!-- 2nd linear layout!-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- back button!-->
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="150dp"
+                android:layout_height="24dp"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="55dp"
+                android:background="@color/transparent"
+                android:src="@drawable/back_button_sign1" />
+
+            <!-- text view to create new project!-->
+            <TextView
+                android:id="@+id/text_Categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/jost_medium"
+                android:text="Timer"
+                android:textColor="@color/black"
+                android:textSize="35dp" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp">
+
+            <Chronometer
+                android:id="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:format="%s"
+                android:gravity="center"
+                android:textColor="@color/blue"
+                android:textSize="62sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_background" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <ToggleButton
+            android:id="@+id/toggle_button"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:textOff="start"
+            android:textOn="stop"
+            android:textSize="18sp"
+            android:background="@drawable/button_cornered"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

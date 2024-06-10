@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ClientClockApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Tracker"
+            android:exported="false" />
+        <activity
             android:name=".DailWorkFeature"
             android:exported="false" />
         <activity

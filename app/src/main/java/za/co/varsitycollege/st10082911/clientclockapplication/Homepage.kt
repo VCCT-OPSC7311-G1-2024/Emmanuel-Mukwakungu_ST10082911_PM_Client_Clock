@@ -49,6 +49,12 @@ class Homepage : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val trackerButton: CardView = findViewById(R.id.trackerCard)
+        trackerButton.setOnClickListener {
+            val intent = Intent(this, Tracker::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun showLogoutConfirmationDialog() {
